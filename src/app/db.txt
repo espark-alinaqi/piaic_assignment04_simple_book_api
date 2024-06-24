@@ -1,0 +1,25 @@
+-- books table
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    type VARCHAR(50) NOT NULL
+);
+
+-- clients table
+CREATE TABLE clients (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    token VARCHAR(255) NOT NULL
+);
+
+-- orders table
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    book_id INT NOT NULL,
+    customer_name VARCHAR(255) NOT NULL,
+    client_id INT NOT NULL,
+    FOREIGN KEY (book_id) REFERENCES books(id),
+    FOREIGN KEY (client_id) REFERENCES clients(id)
+);
