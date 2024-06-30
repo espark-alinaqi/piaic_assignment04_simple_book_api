@@ -1,3 +1,11 @@
+-- todos table
+CREATE TABLE todos (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    type VARCHAR(50) NOT NULL
+);
+
 -- books table
 CREATE TABLE books (
     id SERIAL PRIMARY KEY,
